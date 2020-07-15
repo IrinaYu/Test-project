@@ -29,7 +29,7 @@ public class ViewJiraTicket {
     ticketPage = new TicketPage(driver);
   }
   @Test
-  public void ViewJIRATicket() {
+  public void viewJIRATicket() {
     loginPage.navigateTo();
     loginPage.enterUserName("IrynaKapustina");
     loginPage.enterPassword("IrynaKapustina");
