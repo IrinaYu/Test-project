@@ -5,11 +5,11 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import utils.WebDriverFactory;
 
-public class TestWithParametrs {
+public class TestWithParameters {
 
   WebDriver driver = null;
 
-  @Parameters({"waitTimeOutInSeconds"})
+  @Parameters({"browserName"})
 
   @BeforeMethod
   public void setUp() {
@@ -18,7 +18,7 @@ public class TestWithParametrs {
   }
 
   @Test
-  public static void testWithParametrsInListener() {
+  public static void testWithParameters() {
   }
 
   @AfterMethod

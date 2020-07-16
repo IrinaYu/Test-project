@@ -4,11 +4,11 @@
     <parameter name="waitTimeOutInSeconds" value="10"></parameter>
     <parameter name="browserName" value="Chrome"></parameter>
 
-    <test name="TestWithParametrs">
+    <test name="TestWithParameters">
         <classes>
-            <class name="TestWithParametrs">
+            <class name="TestWithParameters">
             <methods>
-                <include name="testWithParametrsInListener"/>
+                <include name="testWithParameters"/>
             </methods>
             </class>
         </classes>
