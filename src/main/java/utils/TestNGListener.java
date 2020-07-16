@@ -15,8 +15,10 @@ import java.nio.file.StandardCopyOption;
 public class TestNGListener implements ITestListener {
 
   @Override
+  // Запускается один раз перед каждым тестом
   public void onTestStart(ITestResult result) {
-
+    String browserName = result.getTestContext().getCurrentXmlTest().getParameter("browserName");
+    System.out.println("Browser name is " + browserName);
   }
 
   @Override
@@ -53,6 +55,7 @@ public class TestNGListener implements ITestListener {
   }
 
   @Override
+  //Запускается один раз перед тестом
   public void onStart(ITestContext context) {
 
   }

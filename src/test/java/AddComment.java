@@ -68,13 +68,14 @@ public class AddComment {
     ticketPage.clickCommentButton();
     assertTrue(ticketPage.commentFieldIsClickable());
 
-
     ticketPage.clickTextTab();
     assertTrue(ticketPage.textInputFieldIsPresent());
 
     //inputting of comment and ckecking for text "Some comment"
     ticketPage.clearTextField();
     ticketPage.enterComment("Some comment");
+
+    //TODO save comment
 
     String myComment = ("Some comment");
     String typedComment = ticketPage.getTextInputValue();
@@ -84,6 +85,9 @@ public class AddComment {
     ticketPage.clearTextField();
     String clearedInputField = ticketPage.getTextInputValue();
     Assert.assertNotEquals(clearedInputField, myComment);
+
+    //TODO deleting ticket
+    //TODO loging out
   }
 
   @AfterMethod()

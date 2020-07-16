@@ -24,13 +24,36 @@ public class LoginToJira {
     homePage = new HomePage(driver);
   }
 
+  @DataProvider(name = "loginNegative")
+  public Object[][] createData1() {
+    return new Object[][]{
+        {"SomeName", "IrynaKapustina", "Sorry, your username and password are incorrect - please try again."},
+        {"SomeName", "SomePassword", "Sorry, your username and password are incorrect - please try again."},
+        {"IrynaKapustina", "SomePassword", "Sorry, your username and password are incorrect - please try again."},
+
+    };
+  }
+
+  @Test(dataProvider = "loginNegative")
+  public void unsuccessfulLoginTest(String name, String password, String expectedResult) throws InterruptedException{
+    loginPage.navigateTo();
+    loginPage.enterUserName(name);
+    loginPage.enterPassword(password);
+    loginPage.clickLogin();
+
+    //TODO - add check "Sorry, your username and password are incorrect - please try again."
+    assertTrue(loginPage.errorMessageIsPresent(expectedResult));
+  }
+
   @Test
-  public void LoginTest() {
+  public void successfulLoginTest() {
     loginPage.navigateTo();
     loginPage.enterUserName("IrynaKapustina");
     loginPage.enterPassword("IrynaKapustina");
     loginPage.clickLogin();
     assertTrue(homePage.userNameIsPresent());
+
+    //TODO log out
   }
 
   @AfterMethod()
