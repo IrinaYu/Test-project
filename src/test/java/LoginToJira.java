@@ -48,8 +48,8 @@ public class LoginToJira {
   @Test
   public void successfulLoginTest() {
     loginPage.navigateTo();
-    loginPage.enterUserName("IrynaKapustina");
-    loginPage.enterPassword("IrynaKapustina");
+    loginPage.enterUserName("webinar5");
+    loginPage.enterPassword("webinar5");
     loginPage.clickLogin();
     assertTrue(homePage.userNameIsPresent());
 
