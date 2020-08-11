@@ -26,9 +26,9 @@ public class LoginToJira2 {
   @DataProvider(name = "loginNegative")
   public Object[][] createData1() {
     return new Object[][]{
-        {"SomeName", "IrynaKapustina", "Sorry, your username and password are incorrect - please try again."},
-        {"SomeName", "SomePassword", "Sorry, your username and password are incorrect - please try again."},
-        {"IrynaKapustina", "SomePassword", "Sorry, your username and password are incorrect - please try again."},
+        {"SomeName", "IrynaKapustina", "Извините, имя пользователя или пароль неверны - пожалуйста, попробуйте еще раз."},
+        {"SomeName", "SomePassword", "Извините, имя пользователя или пароль неверны - пожалуйста, попробуйте еще раз."},
+        {"IrynaKapustina", "SomePassword", "Извините, имя пользователя или пароль неверны - пожалуйста, попробуйте еще раз."},
 
     };
   }

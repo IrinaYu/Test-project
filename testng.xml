@@ -4,15 +4,43 @@
     <parameter name="waitTimeOutInSeconds" value="10"></parameter>
     <parameter name="browserName" value="Chrome"></parameter>
 
-    <test name="LoginToJira">
-        <classes>
-            <class name="LoginToJira">
-            <methods>
-                <include name="successfulLoginTest"/>
-            </methods>
-            </class>
-        </classes>
-    </test>
+
+        <test name="loginTest">
+            <classes>
+                <class name="LoginToJira">
+                </class>
+            </classes>
+        </test>
+        <test name="viewJIRATicket">
+            <classes>
+                <class name="ViewJiraTicket">
+                </class>
+            </classes>
+        </test>
+        <test name="createIssue">
+            <classes>
+                <class name="CreateIssue">
+                </class>
+            </classes>
+        </test>
+        <test name="addComment">
+            <classes>
+                <class name="AddComment">
+                </class>
+            </classes>
+        </test>
+        <test name="unsuccessfulLoginTest">
+            <classes>
+                <class name="LoginToJira2">
+                </class>
+            </classes>
+        </test>
+        <test name="successfulLoginTest">
+            <classes>
+                <class name="LoginToJira2">
+                </class>
+            </classes>
+        </test>
 
     <listeners>
         <listener class-name="utils.TestNGListener"/>
