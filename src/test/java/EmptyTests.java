@@ -1,6 +1,7 @@
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import utils.WebDriverFactory;
 
 public class EmptyTests {
 
@@ -22,7 +23,8 @@ public class EmptyTests {
   }
 
   @AfterMethod
-  public void afterMethod() {
+  public void tearDown() {
     System.out.println( "AfterMethod");
+    WebDriverFactory.getDriver().quit();
   }
 }

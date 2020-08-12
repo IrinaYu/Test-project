@@ -27,25 +27,25 @@ public class TicketPage {
 
   //waiting until elements are clickable or displayed
   public boolean commentButtonIsClickable() {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30).getSeconds());
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60).getSeconds());
     return wait.until(elementToBeClickable(createCommentButton)).isDisplayed();
   }
 
   public boolean commentFieldIsClickable() {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30).getSeconds());
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60).getSeconds());
     return wait.until(elementToBeClickable(commentField)).isDisplayed();
   }
   public boolean textInputFieldIsPresent() {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30).getSeconds());
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60).getSeconds());
     return wait.until(presenceOfElementLocated(textInput)).isDisplayed();
   }
   public String getTextInputValue() {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30).getSeconds());
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60).getSeconds());
     return wait.until(presenceOfElementLocated(textInput)).getAttribute("value");
   }
 
   public boolean issueTypeIsDysplayed() {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30).getSeconds());
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60).getSeconds());
     return wait.until(presenceOfElementLocated(typeIssue)).isDisplayed();
   }
 

@@ -32,6 +32,6 @@ public class FailedTest {
   @AfterMethod
   public void tearDown() {
 
-    driver.quit();
+    WebDriverFactory.getDriver().quit();
   }
 }

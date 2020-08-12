@@ -28,27 +28,27 @@ public class CreateIssuePage {
 
   //waiting until elements are clickable or displayed
   public boolean projectFieldIsClickable() {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30).getSeconds());
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60).getSeconds());
     return wait.until(elementToBeClickable(projectNameField)).isDisplayed();
   }
 
   public boolean issueTypeFieldIsClickable() {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30).getSeconds());
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60).getSeconds());
     return wait.until(elementToBeClickable(issueTypeField)).isDisplayed();
   }
 
   public boolean summaryFieldIsClickable() {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30).getSeconds());
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60).getSeconds());
     return wait.until(elementToBeClickable(summaryField)).isDisplayed();
   }
 
   public boolean reporterFieldIsClickable() {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30).getSeconds());
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60).getSeconds());
     return wait.until(elementToBeClickable(reporterField)).isDisplayed();
   }
 
   public boolean popUpIssueName() {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30).getSeconds());
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60).getSeconds());
     return wait.until(presenceOfElementLocated(popUpSuccessfulCreate)).isDisplayed();
   }
 

@@ -40,12 +40,12 @@ public class HomePage {
   }
 
   public boolean userNameIsPresent() {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30).getSeconds());
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60).getSeconds());
     return wait.until(presenceOfElementLocated(userNameDisplay)).isDisplayed();
   }
 
   public void clickCreate() {
-    clickOnElementWithRetry(createButton, projectNameField, 3, 30);
+    clickOnElementWithRetry(createButton, projectNameField, 4, 60);
     // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3).getSeconds());
     // driver.findElement(createButton).click();
   }

@@ -21,8 +21,8 @@ public class TestWithParameters {
   public static void testWithParameters() {
   }
 
-  @AfterMethod
+  @AfterMethod()
   public void tearDown() {
-    driver.quit();
+    WebDriverFactory.getDriver().quit();
   }
 }
