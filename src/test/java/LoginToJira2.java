@@ -26,22 +26,22 @@ public class LoginToJira2 {
   @DataProvider(name = "loginNegative")
   public Object[][] createData1() {
     return new Object[][]{
-        {"SomeName", "IrynaKapustina", "Извините, имя пользователя или пароль неверны - пожалуйста, попробуйте еще раз."},
-        {"SomeName", "SomePassword", "Извините, имя пользователя или пароль неверны - пожалуйста, попробуйте еще раз."},
-        {"IrynaKapustina", "SomePassword", "Извините, имя пользователя или пароль неверны - пожалуйста, попробуйте еще раз."},
+        {"SomeName", "IrynaKapustina"},
+        {"SomeName", "SomePassword"},
+        {"IrynaKapustina", "SomePassword"},
 
     };
   }
 
   @Test(dataProvider = "loginNegative")
-  public void unsuccessfulLoginTest(String name, String password, String expectedResult) throws InterruptedException{
+  public void unsuccessfulLoginTest(String name, String password) throws InterruptedException{
     loginPage.navigateTo();
     loginPage.enterUserName(name);
     loginPage.enterPassword(password);
     loginPage.clickLogin();
 
     //TODO - add check "Sorry, your username and password are incorrect - please try again."
-    assertTrue(loginPage.errorMessageIsPresent(expectedResult));
+    assertTrue(loginPage.errorMessageIsPresent());
   }
 
   @Test

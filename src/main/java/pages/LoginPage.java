@@ -18,8 +18,8 @@ public class LoginPage {
   private By userNameInput = By.id("login-form-username");
   private By passwordInput = By.id("login-form-password");
   private By loginButton = By.id("login");
-  private String message = "Sorry, your username and password are incorrect - please try again.";
-  private By errorMessage = By.xpath("//*[text()[contains(.,'" + message + "')]]");
+  //private String message = "Sorry, your username and password are incorrect - please try again.";
+  private By errorMessage = By.id("usernameerror");
 
 
   public LoginPage(WebDriver driver) {
@@ -42,7 +42,7 @@ public class LoginPage {
     driver.get("https://jira.hillel.it/secure/Dashboard.jspa");
   }
 
-  public boolean errorMessageIsPresent(String message) {
+  public boolean errorMessageIsPresent() {
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30).getSeconds());
     return wait.until(presenceOfElementLocated(errorMessage)).isDisplayed();
   }
