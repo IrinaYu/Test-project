@@ -40,8 +40,8 @@ public class HomePage {
   }
 
   public boolean userNameIsPresent() {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60).getSeconds());
-    return wait.until(presenceOfElementLocated(userNameDisplay)).isDisplayed();
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(90).getSeconds());
+    return wait.until(presenceOfElementLocated(userNameDisplay)).isEnabled();
   }
 
   public void clickCreate() {
