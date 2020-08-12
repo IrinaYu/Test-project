@@ -2,7 +2,9 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -21,6 +23,7 @@ public class CreateIssuePage {
   private By submitButton = By.id("create-issue-submit");
   private By popUpSuccessfulCreate = By.xpath("//*[@id='aui-flag-container']/div");
   private By issueLink = By.cssSelector("#aui-flag-container>div>div>a");
+  private By createCommentButton = By.cssSelector("#footer-comment-button");
 
   public CreateIssuePage(WebDriver driver) {
     this.driver = driver;
@@ -95,13 +98,28 @@ public class CreateIssuePage {
     driver.findElement(reporterField).sendKeys(Keys.TAB);
   }
 
+  private void clickOnElementWithRetry(By elementToBeClicked, By successCriteriaElement, int attempts, int timeOutInSeconds) {
+    WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+    for (int i = 0; i < attempts; i++) {
+      try {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(successCriteriaElement)).isDisplayed();
+        break;
+      } catch (TimeoutException e) {
+        wait.until(ExpectedConditions.elementToBeClickable(elementToBeClicked));
+        driver.findElement(elementToBeClicked).click();
+      }
+      // break - прервёт только цикл
+    }
+
+  }
+
   //clicking
   public void clickSubmit() {
-    driver.findElement(submitButton).click();
+    clickOnElementWithRetry(submitButton, issueLink, 4, 60);
   }
 
   public void clickLinkIssue() {
-    driver.findElement(issueLink).click();
+    clickOnElementWithRetry(issueLink, createCommentButton, 4, 60);
   }
 
 }
